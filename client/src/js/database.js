@@ -14,7 +14,7 @@ const initdb = async () =>
 
 // TODO: Add logic to a method that accepts some content and adds it to the database
 export const putDb = async (content) => {console.error('putDb not implemented');
-  console.log('Post to the database');
+  console.log('PUT to the database');
 // Create a connection to the database database and version we want to use.
 const contactDb = await openDB('jate', 1);
 
@@ -22,7 +22,7 @@ const tx = contactDb.transaction('jate', 'readwrite');
 
 const store = tx.objectStore('jate');
 
-const request = store.add({ name: name, home_phone: home, cell_phone: cell, email: email });
+const request = store.put({  });
 
 const result = await request;
 console.log('🚀 - data saved to the database', result);
